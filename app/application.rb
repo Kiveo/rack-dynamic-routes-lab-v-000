@@ -7,7 +7,7 @@ class Application
     resp = Rack::Response.new
     #if request is matched to /items/<item_name>, respond...
     if req.path.match(/items/)
-      item_name = req.path.split("/items/").last #name within path
+      item_name = req.path.split("/items/").last #name within path 
       item = @@items.find{|i| i.name == item_name } #find name from path within class array
       if @@items.include?(item)#item class contains <item_name>
         # resp.status = 200 #this is automatic
